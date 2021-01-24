@@ -39,7 +39,7 @@ function MessagesScreen(props) {
             renderItem={({item}) => (
                 <ListItem
                     title={item.title}
-                    subTitle={item.description}
+                    subtitle={item.description}
                     image={item.image}
                     onPress={() => console.log("Message selected", item)}
                     renderRightActions={() => (
@@ -48,6 +48,17 @@ function MessagesScreen(props) {
             />
                 )}
             ItemSeparatorComponent={ListItemSeparator}
+            refreshing={refreshing}
+            onRefresh={() => {
+                setMessages([
+                    {
+                    id: 2,
+                    title: "T2",
+                    description: "D2",
+                    image: require("../assets/irene.jpg"),
+                    },
+                ]);
+            }}
         />
 
         </Screen>
