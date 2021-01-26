@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, TextInput, TouchableWithoutFeedback, Modal, Button, FlatList} from 'react-native';
+import { StyleSheet, View, TouchableWithoutFeedback, Modal, Button, FlatList} from 'react-native';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import AppText from "./AppText";
@@ -24,9 +24,13 @@ function AppPicker({ icon, placeholder, items, onSelectItem, selectedItem }) {
                     style={styles.icon}
                     />
                 )}
-                <AppText style={styles.text}>
-                    {selectedItem ? selectedItem.label : placeholder}
-                </AppText>
+                
+                {selectedItem ? (
+                    <AppText style={styles.text}>{selectedItem.label}</AppText>
+                ) : (
+                    <AppText style={styles.placeholder}>{placeholder}</AppText>
+                )}
+
                 <MaterialCommunityIcons
                     name="chevron-down"
                     size={20}
@@ -68,7 +72,11 @@ const styles = StyleSheet.create({
     },
     text: {
         flex: 1,
-    }
+    },
+    placeholder: {
+        color: defaultStyles.colors.medium,
+        flex: 1,
+    },
     
 })
 
