@@ -1,5 +1,4 @@
 # DoneWithIt
-
 ========
 
 DoneWithIt is a marketplace to sell the stuff you don't need anymore.
@@ -15,6 +14,6 @@ Features
 Installation
 ------------
 
-Install $project by running:
-
-    install project
+This project needs Expo for simulation.
+Download and run script "npm start"
+Not implemented for android devices, only for iOs.
